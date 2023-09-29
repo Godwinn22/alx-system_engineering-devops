@@ -1,2 +1,2 @@
 #!/bin/bash
-if [-d -un == "guillaume"] then chown betty hello
+chown -u betty hello
