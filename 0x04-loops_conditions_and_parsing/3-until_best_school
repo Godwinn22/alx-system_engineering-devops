@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # This script is displaying "Best School" 10
-#+ times using the while loop
+#+ times using the until loop
 
 var="Best School"
 i=0
-while [ $i -lt 10 ]
+until [ $i -lt 10 ]
 do
 	echo "$var"
 	((i++))
