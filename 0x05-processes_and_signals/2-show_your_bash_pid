@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# This is a Bash script that displays lines containing the bash word, thus
-#+ allowing you to easily get the PID of your Bash process.
+# This is a Bash script that displays lines containing the bash word.
+# shellcheck disable=SC2009
 
 ps aux | grep bash
