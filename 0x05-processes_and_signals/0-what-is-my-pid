@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# This is a Bash script that displays its own PID.
+
+# the 2 dollar sign is a variable name that the shell assogns to a script so as to get it's PID.
+echo $$
