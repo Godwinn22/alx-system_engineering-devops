@@ -8,15 +8,20 @@
 
 FILE="/var/run/myscript.pid"
 
+# First check if the file specified by $FILE does not exist (! -e "$FILE").
+#+ If the file does not exist, it creates an empty file using the touch command.
 if [ ! -e "$FILE" ]
 then
 	touch "$FILE"
 fi
 
+# writing the PID of the current process (the script itself) to the file specified by $FILE.
+#+ This allows external processes to identify and interact with this script using its PID.
 echo $$ > "$FILE"
 trap "echo 'I hate the kill command'; rm ""$FILE"";" SIGTERM SIGQUIT
 trap "echo 'Y U no love me?!'; exit" SIGINT
 
+# Display "To infinity and beyond" indefinitely using a while loop
 while true
 do
 	echo "To infinity and beyond"
