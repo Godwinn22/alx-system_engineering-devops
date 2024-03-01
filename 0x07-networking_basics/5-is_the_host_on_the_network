@@ -2,7 +2,7 @@
 # This is a Bash script that pings an IP address passed as an argument.
 
 arg=$1
-if [ -z $arg ]
+if [ -z "$arg" ]
 then
 	echo "Usage: 5-is_the_host_on_the_network {IP_ADDRESS}"
 	exit
