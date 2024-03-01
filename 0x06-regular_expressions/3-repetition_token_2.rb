@@ -2,7 +2,7 @@
 
 arg = ARGV[0]
 
-regex = /hbt{1,6}n/
+regex = /hbt+n/
 
 occur = arg.scan(regex)
 
