@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# This is a Bash script that configures a new Ubuntu
+# machine to respect above requirements (this script
+# will be run on the server itself)
+
+#get and install updates
+sudo apt-get -y update
+# install nginx, "-y":to answer yes to all prompts
+sudo apt-get install -y nginx
+
+# allow our firewall let nginx listen on port 80 for http
+sudo ufw "Nginx HTTP"
+
+# write Hello world to index.html
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+#check if ou configuration files are okay
+sudo nginx -t
+
+# restart the nginx server
+sudo service nginx restart
