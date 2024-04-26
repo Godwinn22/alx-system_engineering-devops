@@ -15,11 +15,11 @@ sudo chown -R "$USER":"$USER" /var/www/html
 sudo chmod -R 755 /var/www
 
 # Redirect /redirect_me to redirect me to my github account
-sed -i '37i\rewrite ^/redirect_me https://github.com/Godwinn22 permanent;' /etc/nginx/sites-available/default
+sudo sed -i '37i\rewrite ^/redirect_me https://github.com/Godwinn22 permanent;' /etc/nginx/sites-available/default
 
 # Have a 404 error page
 echo "Ceci n'est pas une page" >> /var/www/html/error404.html
 
-sed -i '38i\error_page 404 /error404.html;' /etc/nginx/sites-available/default
+sudo sed -i '38i\error_page 404 /error404.html;' /etc/nginx/sites-available/default
 
 sudo service nginx start
