@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+#get and install updates
+sudo apt-get -y update
+# install nginx, "-y":to answer yes to all prompts
+sudo apt-get install -y nginx
+
+# allow our firewall let nginx listen on port 80 for http
+sudo ufw "Nginx HTTP"
+
+# write Hello world to index.html
+echo "Hello World!" | sudo tee /var/www/html/index.html
+
+#Give the user  ownership to website files
+sudo chown -R $USER:$USER /var/www/html
+sudo chmod -R 755 /var/www
+
+# Redirect to /redirect_me to a youtube video
+sed -i '37i\rewrite ^/redirect_me https://github.com/Godwinn22 permanent;' /etc/nginx/sites-available/default
+
+sudo service nginx start
