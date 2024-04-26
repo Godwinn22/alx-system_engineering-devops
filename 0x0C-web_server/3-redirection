@@ -11,10 +11,10 @@ sudo ufw "Nginx HTTP"
 echo "Hello World!" | sudo tee /var/www/html/index.html
 
 #Give the user  ownership to website files
-sudo chown -R $USER:$USER /var/www/html
+sudo chown -R "$USER":"$USER" /var/www/html
 sudo chmod -R 755 /var/www
 
-# Redirect to /redirect_me to a youtube video
+# Redirect /redirect_me to redirect me to my github account
 sed -i '37i\rewrite ^/redirect_me https://github.com/Godwinn22 permanent;' /etc/nginx/sites-available/default
 
 sudo service nginx start
