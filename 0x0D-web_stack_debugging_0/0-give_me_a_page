@@ -1,3 +1,3 @@
 #!/usr/bin/env bash
 # Starts apache server
-sudo service apache restart
+/etc/init.d/apache2 start
