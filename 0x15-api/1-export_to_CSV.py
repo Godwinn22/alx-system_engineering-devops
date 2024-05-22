@@ -15,7 +15,7 @@ if __name__ == "__main__":
     user = requests.get(
         "https://jsonplaceholder.typicode.com/users/{}".format(user_id))
     # getting employee name, by parsing it to a python object
-    emp_name = user.json().get("name")
+    emp_name = user.json().get("username")
     # getting the todos
     todos = requests.get("https://jsonplaceholder.typicode.com/todos")
 
